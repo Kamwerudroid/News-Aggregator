@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     "api.apps.ApiConfig",
 ]
 
+REST_FRAMEWORK= {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 24, # Number of items per page
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
