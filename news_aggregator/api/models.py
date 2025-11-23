@@ -1,3 +1,15 @@
 from django.db import models
+class News (models.Model):
+    title = models. CharField(max_length=255)
+    link = models. URLField(max_length=2048)
+    image_url = models. URLField(max_length=2048, blank=True, null=True)
+    source = models. CharField(max_length=50)
+    created_at = models. DateTimeField(auto_now_add=True)
 
-# Create your models here.
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "News"
+        verbose_name_plural = "News Items"
+
+    def _str_(self):
+        return self.title
